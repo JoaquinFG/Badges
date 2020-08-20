@@ -50,7 +50,7 @@ class BadgeNew extends React.Component {
                 //"Multiplatform app developer"
                 email={this.state.form.email}
                 //joaquinferreirag@gmail.com
-                avatar="https://s.gravatar.com/avatar/ab6d453f438e2e4fb6ded179639adc47?s=80"
+                avatarUrl="https://s.gravatar.com/avatar/ab6d453f438e2e4fb6ded179639adc47?s=80"
               />
             </div>
             <div className="col-6">
