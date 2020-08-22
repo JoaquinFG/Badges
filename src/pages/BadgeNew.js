@@ -2,6 +2,7 @@ import React from "react";
 import header from "../images/badge-header.svg";
 import Badge from "../components/Badge";
 import BadgeForm from "../components/BadgeForm";
+import api from '../api'
 
 import "./styles/BadgeNew.css";
 
@@ -28,6 +29,17 @@ class BadgeNew extends React.Component {
     });
   };
 
+  handleSubmit = async (e) => {
+    e.preventDefault();
+    this.setState({ loading: true, error: null });
+    try {
+      await api.badges.create(this.state.form)
+      this.setState({ loading: false});
+    } catch (error) {
+      this.setState({loading: false, error: error})
+    }
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -48,12 +60,13 @@ class BadgeNew extends React.Component {
                 //"Multiplatform app developer"
                 email={this.state.form.email || 'Email'}
                 //joaquinferreirag@gmail.com
-                avatarUrl="https://s.gravatar.com/avatar/ab6d453f438e2e4fb6ded179639adc47?s=80"
+                //avatarUrl="https://s.gravatar.com/avatar/ab6d453f438e2e4fb6ded179639adc47?s=80"
               />
             </div>
             <div className="col-6">
               <BadgeForm
                 onChange={this.handleChange}
+                onSubmit={this.handleSubmit}
                 formValues={this.state.form}
               />
             </div>
