@@ -38,15 +38,15 @@ class BadgeNew extends React.Component {
           <div className="row">
             <div className="col-6">
               <Badge
-                firstName={this.state.form.firstName}
+                firstName={this.state.form.firstName || 'First_name'}
                 //"Joaquin"
-                lastName={this.state.form.lastName}
+                lastName={this.state.form.lastName || 'Last_name'}
                 //"Ferreira"
-                twitter={this.state.form.twitter}
+                twitter={this.state.form.twitter || 'twitter'}
                 //"Joakin_FG"
-                jobTitle={this.state.form.jobTitle}
+                jobTitle={this.state.form.jobTitle || 'Job_Title'}
                 //"Multiplatform app developer"
-                email={this.state.form.email}
+                email={this.state.form.email || 'Email'}
                 //joaquinferreirag@gmail.com
                 avatarUrl="https://s.gravatar.com/avatar/ab6d453f438e2e4fb6ded179639adc47?s=80"
               />
