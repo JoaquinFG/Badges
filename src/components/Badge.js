@@ -12,7 +12,7 @@ class Badge extends React.Component {
         </div>
         <div className="Badge__section-name">
           <Gravatar
-            className="Badge__avater"
+            className="Badge__avater mr-4"
             email={this.props.email}
             alt="Avatar"
           />
